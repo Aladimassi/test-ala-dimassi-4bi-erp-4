@@ -4,10 +4,12 @@ import { HomeComponent } from './home/home.component';
 import { ListSuggestionComponent } from './core/list-suggestion/list-suggestion.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SuggestionDetailsComponent } from './core/suggestion-details/suggestion-details.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   { path:'', redirectTo:'home', pathMatch:'full'},
   { path:'home', component: HomeComponent},
+  { path:'login', component: LoginComponent},
   { path:'suggestion/list', component: ListSuggestionComponent},
   { path:'suggestion/details/:id', component: SuggestionDetailsComponent},
   { path:'annonce', loadChildren: () => import('./annonce/annonce.module').then( m => m.AnnonceModule) },
