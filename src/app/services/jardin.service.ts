@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { Jardin } from '../models/jardin';
 
 @Injectable({
@@ -16,11 +16,21 @@ export class JardinService {
   }
 
   getAllJardin(): Observable<Jardin[]> {
-    return this.http.get<Jardin[]>(this.url);
+    return this.http.get<Jardin[]>(this.url).pipe(
+      map(jardins => jardins.map(j => ({
+        ...j,
+        id: typeof j.id === 'string' ? parseInt(j.id) : j.id
+      })))
+    );
   }
 
   getJardinById(id: number): Observable<any> {
-    return this.http.get<any>(this.url + id);
+    return this.http.get<any>(this.url + id).pipe(
+      map(jardin => ({
+        ...jardin,
+        id: typeof jardin.id === 'string' ? parseInt(jardin.id) : jardin.id
+      }))
+    );
   }
 
   updateJardin(id: number, jardin: Jardin): Observable<any> {

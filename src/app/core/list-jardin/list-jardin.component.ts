@@ -17,7 +17,7 @@ export class ListJardinComponent {
     }
     return this.jardins.filter( 
       jardin => 
-        jardin.id.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+        (jardin.id?.toString().includes(this.searchTerm)) ||
         jardin.adresse.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
   }

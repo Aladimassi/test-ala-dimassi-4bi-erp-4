@@ -16,10 +16,17 @@ export class DetailJardinComponent {
 
   ngOnInit(){
     this.id = +this.activatedRoute.snapshot.params['id'];
-    console.log('This is the id: ', this.id);
-    this.jardinService.getJardinById(this.id).subscribe((data)=>{
-      this.jardin = data;
-      console.log(data);
+    console.log('ID du jardin:', this.id);
+    this.jardinService.getJardinById(this.id).subscribe({
+      next: (data) => {
+        console.log('Données reçues:', data);
+        // Compatible avec JSON Server (retourne l'objet directement) et Node.js backend (retourne {jardin: ...})
+        this.jardin = data.jardin || data;
+        console.log('Jardin chargé:', this.jardin);
+      },
+      error: (err) => {
+        console.error('Erreur lors de la récupération du jardin:', err);
+      }
     });
   }
 

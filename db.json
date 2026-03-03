@@ -1,24 +1,24 @@
 {
   "jardins": [
     {
-      "id": "J001",
+      "id": "1",
       "adresse": "123 Rue des Fleurs, Tunis",
-      "surface": 150,
-      "dateentre": "2024-01-15",
-      "statut": "false"
+      "surface": 15000,
+      "dateEntretien": "2024-01-15",
+      "statut": false
     },
     {
-      "id": "J002",
+      "id": "2",
       "adresse": "45 Avenue de la Liberté",
       "surface": 200,
-      "dateentre": "2024-02-20",
+      "dateEntretien": "2024-02-20",
       "statut": true
     },
     {
-      "id": "J003",
+      "id": "3",
       "adresse": "78 Boulevard Habib Bourguiba",
       "surface": 75,
-      "dateentre": "2023-12-10",
+      "dateEntretien": "2023-12-10",
       "statut": false
     }
   ],
