@@ -30,7 +30,8 @@ export class ListJardinComponent {
     });
   }
 
-  deleteJardin(id: string){
+  deleteJardin(id: number | undefined){
+    if (!id) return;
     this.jardinService.deleteJardin(id).subscribe(()=>{
       this.jardins = this.jardins.filter(j => j.id != id);
     });

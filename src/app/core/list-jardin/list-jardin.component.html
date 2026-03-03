@@ -11,7 +11,7 @@
                 </h6>
                 <p class="card-text">
                     <strong>Surface:</strong> {{ jardin.surface }} m²<br>
-                    <strong>Date d'entrée:</strong> {{ jardin.dateentre | date:'dd MMM yyyy' }}<br>
+                    <strong>Date d'entretien:</strong> {{ jardin.dateEntretien | date:'dd MMM yyyy' }}<br>
                     <strong>Statut:</strong> 
                     <span *ngIf="jardin.statut" class="badge text-bg-success">Actif</span>
                     <span *ngIf="!jardin.statut" class="badge text-bg-danger">Inactif</span>

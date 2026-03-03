@@ -10,12 +10,12 @@ import { JardinService } from '../../services/jardin.service';
 })
 export class DetailJardinComponent {
   jardin!: Jardin | any;
-  id!: string;
+  id!: number;
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router, private jardinService: JardinService){}
 
   ngOnInit(){
-    this.id = this.activatedRoute.snapshot.params['id'];
+    this.id = +this.activatedRoute.snapshot.params['id'];
     console.log('This is the id: ', this.id);
     this.jardinService.getJardinById(this.id).subscribe((data)=>{
       this.jardin = data;

@@ -19,15 +19,15 @@ export class JardinService {
     return this.http.get<Jardin[]>(this.url);
   }
 
-  getJardinById(id: string): Observable<any> {
+  getJardinById(id: number): Observable<any> {
     return this.http.get<any>(this.url + id);
   }
 
-  updateJardin(id: string, jardin: Jardin): Observable<any> {
+  updateJardin(id: number, jardin: Jardin): Observable<any> {
     return this.http.put<any>(this.url + id, jardin);
   }
 
-  deleteJardin(id: string): Observable<void> {
+  deleteJardin(id: number): Observable<void> {
     return this.http.delete<void>(this.url + id);
   }
 }
