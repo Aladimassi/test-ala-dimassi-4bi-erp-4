@@ -1,0 +1,33 @@
+<div class="bg-light">
+    <h1 class="text-center mt-5 mb-5">Liste des Jardins - Ala Dimassi</h1>
+    <div>
+        <input class="form-control m-2" type="text" placeholder="Rechercher un jardin" [(ngModel)]="searchTerm">
+        <a routerLink="/jardin/add" class="btn btn-link"><i class="bi bi-plus-circle"></i> Ajouter un Jardin</a>
+        <div class="card m-2" *ngFor="let jardin of filterJardin()">
+            <div class="card-body">
+                <h5 class="card-title">Jardin #{{ jardin.id }}</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">
+                    <i class="bi bi-geo-alt"></i> {{ jardin.adresse }}
+                </h6>
+                <p class="card-text">
+                    <strong>Surface:</strong> {{ jardin.surface }} m²<br>
+                    <strong>Date d'entrée:</strong> {{ jardin.dateentre | date:'dd MMM yyyy' }}<br>
+                    <strong>Statut:</strong> 
+                    <span *ngIf="jardin.statut" class="badge text-bg-success">Actif</span>
+                    <span *ngIf="!jardin.statut" class="badge text-bg-danger">Inactif</span>
+                </p>
+                <div>
+                    <a class="btn btn-info text-white m-2" [routerLink]="['/jardin/details/', jardin.id]">
+                        <i class="bi bi-info-circle"></i> Détails
+                    </a>
+                    <a class="btn btn-warning text-white" [routerLink]="['/jardin/update/', jardin.id]">
+                        <i class="bi bi-pencil-square"></i> Modifier
+                    </a>
+                    <button (click)="deleteJardin(jardin.id)" class="btn btn-danger m-2">
+                        <i class="bi bi-trash"></i> Supprimer
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

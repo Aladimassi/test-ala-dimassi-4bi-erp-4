@@ -15,6 +15,10 @@ import { LoginComponent } from './login/login.component';
 import { AddSuggestionComponent } from './core/add-suggestion/add-suggestion.component';
 import { provideHttpClient } from '@angular/common/http';
 import { UpdateSuggestionComponent } from './core/update-suggestion/update-suggestion.component';
+import { AddJardinComponent } from './core/add-jardin/add-jardin.component';
+import { ListJardinComponent } from './core/list-jardin/list-jardin.component';
+import { DetailJardinComponent } from './core/detail-jardin/detail-jardin.component';
+import { UpdateJardinComponent } from './core/update-jardin/update-jardin.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,11 @@ import { UpdateSuggestionComponent } from './core/update-suggestion/update-sugge
     SuggestionDetailsComponent,
     LoginComponent,
     AddSuggestionComponent,
-    UpdateSuggestionComponent
+    UpdateSuggestionComponent,
+    AddJardinComponent,
+    ListJardinComponent,
+    DetailJardinComponent,
+    UpdateJardinComponent
   ],
   imports: [
     BrowserModule,

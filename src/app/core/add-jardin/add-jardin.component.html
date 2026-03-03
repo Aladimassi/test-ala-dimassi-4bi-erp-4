@@ -1,0 +1,49 @@
+<div class="container mt-5 mb-5">
+    <h1 class="text-center">Ajouter un Jardin - Ala Dimassi</h1>
+    <div class="card p-2 bg-light">
+        <form [formGroup]="jardinForm" (ngSubmit)="submitJardinForm()">
+            <div class="mb-3">
+                <label for="id" class="form-label">ID : </label>
+                <input type="text" class="form-control" formControlName="id" placeholder="Entrer l'ID du jardin" id="id">
+                <div class="alert alert-danger m-2" *ngIf="id?.errors?.['required'] && (id?.touched || id?.dirty)">
+                    L'ID est requis.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="adresse" class="form-label">Adresse : </label>
+                <input type="text" class="form-control" formControlName="adresse" placeholder="Entrer l'adresse du jardin" id="adresse">
+                <div class="alert alert-danger m-2" *ngIf="adresse?.errors?.['required'] && (adresse?.touched || adresse?.dirty)">
+                    L'adresse est requise.
+                </div>
+                <div class="alert alert-danger m-2" *ngIf="adresse?.errors?.['minlength'] && (adresse?.touched || adresse?.dirty)">
+                    L'adresse doit comporter au moins 5 caractères.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="surface" class="form-label">Surface (m²) : </label>
+                <input type="number" class="form-control" formControlName="surface" placeholder="Entrer la surface du jardin" id="surface">
+                <div class="alert alert-danger m-2" *ngIf="surface?.errors?.['required'] && (surface?.touched || surface?.dirty)">
+                    La surface est requise.
+                </div>
+                <div class="alert alert-danger m-2" *ngIf="surface?.errors?.['min'] && (surface?.touched || surface?.dirty)">
+                    La surface doit être d'au moins 50 m².
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="dateentre" class="form-label">Date d'entrée : </label>
+                <input type="date" class="form-control" formControlName="dateentre" id="dateentre">
+                <div class="alert alert-danger m-2" *ngIf="dateentre?.errors?.['required'] && (dateentre?.touched || dateentre?.dirty)">
+                    La date d'entrée est requise.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="statut" class="form-label">Statut : </label>
+                <select class="form-select" id="statut" formControlName="statut">
+                    <option [value]="true">Actif</option>
+                    <option [value]="false">Inactif</option>
+                </select>
+            </div>
+            <button type="submit" [disabled]="jardinForm.invalid" class="btn btn-primary">Soumettre</button>
+        </form>
+    </div>
+</div>

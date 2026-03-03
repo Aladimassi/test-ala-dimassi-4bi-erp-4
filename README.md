@@ -1,6 +1,49 @@
-# Firstapp
+# Application de Gestion des Jardins
+
+**Développé par: Ala Dimassi**
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.21.
+
+## Description
+
+Application Angular pour la gestion des jardins avec les fonctionnalités CRUD complètes.
+
+## Entité Jardin
+
+L'application gère les jardins avec les propriétés suivantes:
+- **id**: string (identifiant unique)
+- **adresse**: string (minimum 5 caractères)
+- **surface**: number (doit être positive et minimum 50 m²)
+- **dateentre**: date (date d'entrée)
+- **statut**: boolean (actif/inactif)
+
+## Fonctionnalités
+
+- **Liste des jardins**: Affichage de tous les jardins avec recherche
+- **Ajouter un jardin**: Formulaire de création avec validation
+- **Détails du jardin**: Affichage des informations détaillées
+- **Modifier un jardin**: Formulaire de modification avec validation
+- **Supprimer un jardin**: Suppression d'un jardin
+
+## Validations
+
+- L'adresse doit contenir au moins 5 caractères
+- La surface doit être d'au moins 50 m² et positive
+- Tous les champs sont obligatoires
+
+## Backend (JSON Server)
+
+Pour tester l'application, vous devez démarrer un serveur JSON:
+
+```bash
+# Installer json-server (si ce n'est pas déjà fait)
+npm install -g json-server
+
+# Démarrer le serveur JSON
+json-server --watch db.json --port 3000
+```
+
+Le serveur sera accessible sur `http://localhost:3000/jardins`
 
 ## Development server
 

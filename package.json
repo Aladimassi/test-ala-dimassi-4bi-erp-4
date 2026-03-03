@@ -1,6 +1,8 @@
 {
   "name": "firstapp",
   "version": "0.0.0",
+  "author": "Ala Dimassi",
+  "description": "Application de gestion des jardins",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

@@ -1,0 +1,46 @@
+{
+  "jardins": [
+    {
+      "id": "J001",
+      "adresse": "123 Rue des Fleurs, Tunis",
+      "surface": 150,
+      "dateentre": "2024-01-15",
+      "statut": "false"
+    },
+    {
+      "id": "J002",
+      "adresse": "45 Avenue de la Liberté",
+      "surface": 200,
+      "dateentre": "2024-02-20",
+      "statut": true
+    },
+    {
+      "id": "J003",
+      "adresse": "78 Boulevard Habib Bourguiba",
+      "surface": 75,
+      "dateentre": "2023-12-10",
+      "statut": false
+    }
+  ],
+  "suggestions": [
+    {
+      "id": "1",
+      "title": "Organiser une journée team building",
+      "description": "Suggestion pour organiser une journée de team building pour renforcer les liens entre les membres de l'équipe.",
+      "category": "Événements",
+      "date": "2025-01-20",
+      "status": "acceptee",
+      "nbLikes": 10
+    },
+    {
+      "id": "2",
+      "title": "Améliorer le système de réservation",
+      "description": "Proposition pour améliorer la gestion des réservations en ligne avec un système de confirmation automatique.",
+      "category": "Technologie",
+      "date": "2025-01-15",
+      "status": "refusee",
+      "nbLikes": 0
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
